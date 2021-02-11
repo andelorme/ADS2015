@@ -1,6 +1,6 @@
 Olá esse é o arquivo inicial da Disciplna de Games 
 
-Participantes:
-André Delorme
-Cleber Rodrigues Cascales
-Gabriel Lima
+Participantes:<br>
+<p>André Delorme</p>
+<p>Cleber Rodrigues Cascales</p>
+<p>Gabriel Lima</p>
