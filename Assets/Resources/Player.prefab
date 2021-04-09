@@ -49,7 +49,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 1
+  Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 0
   ObservedComponents:
@@ -95,7 +95,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5338878995264910691}
   - component: {fileID: 404372572235586843}
-  - component: {fileID: 3743495492646309473}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -168,15 +167,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3743495492646309473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7487011562310016146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de65682676b56f64cb1e9beb82a343cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -9,7 +9,7 @@ namespace br.unorp.ads
     {
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
-        private float playerSpeed = 2.0f;
+        private float playerSpeed = 4.0f;
 
         // Start is called before the first frame update
         void Start()
@@ -20,13 +20,11 @@ namespace br.unorp.ads
         // Update is called once per frame
         void Update()
         {
-            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
-            {
-                return;
-            }
+            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true) return;
             var delta = Time.deltaTime * playerSpeed;
-            transform.position = transform.position +
-            new Vector3(delta * Input.GetAxis("Horizontal"), delta * Input.GetAxis("Vertical"), 0);
+            var velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+            transform.position = transform.position + Vector3.Normalize(velocity) * delta;
+            
         }
 
         void Awake()
