@@ -36,7 +36,6 @@ namespace br.unorp.ads
                 return;
             }
             PhotonNetwork.NickName = value;
-
             PlayerPrefs.SetString(playerNamePrefKey,value);
         }
     }

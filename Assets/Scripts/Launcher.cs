@@ -2,14 +2,11 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-
 namespace br.unorp.ads
 {
 
     public class Launcher : MonoBehaviourPunCallbacks
     {
-        public GameObject controlPanel;
-        public GameObject progressLabel;
         private byte maxPlayersPerRoom = 4;
         bool isConnecting;
         string gameVersion = "1";
@@ -21,8 +18,6 @@ namespace br.unorp.ads
 
         void Start()
         {
-            progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
         }
 
         public override void OnConnectedToMaster()
@@ -37,8 +32,6 @@ namespace br.unorp.ads
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
             Debug.LogWarningFormat("OnDisconnected() - {0}", cause);
         }
 
@@ -61,8 +54,6 @@ namespace br.unorp.ads
 
         public void Connect()
         {
-            progressLabel.SetActive(true);
-            controlPanel.SetActive(false);
             if (PhotonNetwork.IsConnected)
             {
                 PhotonNetwork.JoinRandomRoom();

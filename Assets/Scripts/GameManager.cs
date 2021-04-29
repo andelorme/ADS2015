@@ -1,25 +1,17 @@
-using System;
-using System.Collections;
-
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 using Photon.Pun;
 using Photon.Realtime;
-
 
 namespace br.unorp.ads
 {
     public class GameManager : MonoBehaviourPunCallbacks
     {
-
         public GameObject playerPrefab;
-
         public override void OnLeftRoom()
         {
-            SceneManager.LoadScene(0);
+             Debug.LogFormat("Player left room");
         }
 
         void Start()
@@ -47,7 +39,6 @@ namespace br.unorp.ads
             if (PhotonNetwork.IsMasterClient)
             {
                 Debug.LogFormat("OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
-                LoadArena();
             }
         }
 
@@ -58,7 +49,6 @@ namespace br.unorp.ads
             if (PhotonNetwork.IsMasterClient)
             {
                 Debug.LogFormat("OnPlayerLeftRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
-                LoadArena();
             }
         }
 
