@@ -507,6 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 4007187113678376497, guid: dc6f1a1e959f5024fac5a2672880289a, type: 3}
+  ballPrefab: {fileID: 5132299773737659181, guid: 938853942f743c74cbf65998006e6d9b, type: 3}
 --- !u!4 &989610327
 Transform:
   m_ObjectHideFlags: 0

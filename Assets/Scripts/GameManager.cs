@@ -9,6 +9,7 @@ namespace br.unorp.ads
     public class GameManager : MonoBehaviourPunCallbacks
     {
         public GameObject playerPrefab;
+        public GameObject ballPrefab;
         public override void OnLeftRoom()
         {
              Debug.LogFormat("Player left room");
@@ -26,6 +27,7 @@ namespace br.unorp.ads
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
                     PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
+                    PhotonNetwork.Instantiate(this.ballPrefab.name, new Vector3(1f, 0f, 0f), Quaternion.identity, 0);
                 }
                 else
                 {
