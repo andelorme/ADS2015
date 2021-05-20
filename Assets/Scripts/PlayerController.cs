@@ -9,6 +9,7 @@ namespace br.unorp.ads
         public float playerSpeed = 4.0f;
         private Rigidbody2D rb;
         public Vector2 velocity;
+        private bool facingRight = true;
 
         // Start is called before the first frame update
         void Start()
@@ -27,8 +28,25 @@ namespace br.unorp.ads
 
         void FixedUpdate()
         {
+            float  h = Input.GetAxisRaw("Horizontal");
             if (photonView.IsMine == false && PhotonNetwork.IsConnected == true) return;
             rb.velocity = this.velocity * this.playerSpeed;
+            if(h > 0 && !facingRight)
+            {
+                Flip();
+            }
+            else if(h < 0 && facingRight)
+            {
+                Flip();
+            }
+        }
+
+        void Flip()
+        {
+            facingRight = !facingRight;
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
         }
 
         void Awake()
